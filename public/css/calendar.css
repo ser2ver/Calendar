@@ -1,0 +1,28 @@
+.day {
+    font-size: large;
+    padding: 5px;
+}
+
+.day-curr {
+    font-weight: bold;
+}
+
+.day-prev {
+    color: #AAAAAA;
+}
+
+.day-next {
+    color: #AAAAAA;
+}
+
+.day-holy {
+    background: #FFEEEE;
+}
+
+.day-today {
+    background: #EEEEFF;
+}
+
+.day-notes {
+    text-decoration: underline;
+}

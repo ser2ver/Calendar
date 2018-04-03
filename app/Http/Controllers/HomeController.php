@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,10 +19,14 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
+     * @param int $year
+     * @param int $month
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(int $year=0, int $month=0)
     {
-        return view('home');
+        $calendar = new \App\Calendar(Auth::user());
+        $calendar = $calendar->make($year, $month);
+        return view('home', ['calendar' => $calendar]);
     }
 }
